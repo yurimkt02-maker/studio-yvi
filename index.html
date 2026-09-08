@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio YVI | Salão de Beleza e Cuidados em Ilha Comprida - SP</title>
+    <meta name="description" content="Há 17 anos cuidando de mulheres que valorizam beleza, bem-estar e um atendimento atencioso no Studio YVI em Ilha Comprida - SP. Cabelos, unhas, sobrancelhas e mais.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Paleta de Cores */
+            --c-pink: #F45CAE;
+            --c-pink-hover: #D94B96;
+            --c-pink-soft: #FCE7F3;
+            --c-offwhite: #FFF9FC;
+            --c-white: #FFFFFF;
+            --c-black: #171717;
+            --c-gray: #6B6368;
+            --c-border: #EAEAEA;
+
+            /* Tipografia */
+            --font-title: 'Cormorant Garamond', serif;
+            --font-text: 'Manrope', sans-serif;
+
+            /* Espaçamentos e Estrutura */
+            --section-padding: 6rem 5%;
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        /* Resets */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Offset para navegacao com header fixo */
+        section, [id] {
+            scroll-margin-top: 90px;
+        }
+
+        body {
+            font-family: var(--font-text);
+            color: var(--c-black);
+            background-color: var(--c-white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            background-color: var(--c-pink-soft);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Tipografia Base */
+        h1, h2, h3, h4, h5, .title-font {
+            font-family: var(--font-title);
+            font-weight: 500;
+            line-height: 1.15;
+            color: var(--c-black);
+        }
+
+        p {
+            color: var(--c-gray);
+            font-weight: 400;
+            font-size: 1rem;
+        }
+
+        .eyebrow {
+            font-family: var(--font-text);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--c-pink);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .section-title {
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--c-gray);
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+
+        .demo-notice {
+            font-size: 0.8rem;
+            color: var(--c-gray);
+            font-style: italic;
+            margin-top: 1.5rem;
+            opacity: 0.85;
+        }
+
+        /* Utilidades */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .text-center { text-align: center; }
+        .text-left { text-align: left; }
+        .bg-offwhite { background-color: var(--c-offwhite); }
+        .bg-pink-soft { background-color: var(--c-pink-soft); }
+        .bg-white { background-color: var(--c-white); }
+        .bg-dark { background-color: var(--c-black); color: var(--c-white); }
+        .bg-dark p { color: #A0A0A0; }
+
+        /* Botões */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            font-family: var(--font-text);
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background-color: var(--c-pink);
+            color: var(--c-white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--c-pink-hover);
+            transform: translateY(-2px);
+            color: var(--c-white);
+            box-shadow: 0 6px 20px rgba(244, 92, 174, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--c-black);
+            border: 1px solid var(--c-black);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--c-black);
+            color: var(--c-white);
+        }
+
+        .btn-white {
+            background-color: var(--c-white);
+            color: var(--c-pink);
+        }
+
+        .btn-white:hover {
+            background-color: var(--c-offwhite);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        
+        .btn-text {
+            background: transparent;
+            color: var(--c-black);
+            font-weight: 600;
+            padding: 0;
+            text-transform: none;
+            border-bottom: 1px solid var(--c-pink);
+            border-radius: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .btn-text:hover {
+            color: var(--c-pink);
+        }
+
+        /* Header e Navegação */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+            background-color: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            height: 80px;
+            display: flex;
+            align-items: center;
+        }
+
+        header.scrolled {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border-bottom: 1px solid var(--c-border);
+            height: 70px;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: var(--font-title);
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: var(--c-black);
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            z-index: 1002;
+        }
+
+        .logo span {
+            color: var(--c-pink);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2.2rem;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--c-black);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--c-pink);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--c-pink);
+        }
+
+        .header-cta {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-cta .btn {
+            padding: 10px 20px;
+            font-size: 0.8rem;
+        }
+
+        /* Menu Hamburguer */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            width: 30px;
+            height: 22px;
+            position: relative;
+            z-index: 1002;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: var(--c-black);
+            position: absolute;
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+
+        .hamburger span:nth-child(1) { top: 0; }
+        .hamburger span:nth-child(2) { top: 10px; }
+        .hamburger span:nth-child(3) { top: 20px; }
+
+        .hamburger.active span:nth-child(1) { top: 10px; transform: rotate(45deg); }
+        .hamburger.active span:nth-child(2) { opacity: 0; transform: translateX(-10px); }
+        .hamburger.active span:nth-child(3) { top: 10px; transform: rotate(-45deg); }
+
+        /* Mobile Navigation Overlay */
+        .nav-mobile {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--c-white);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1.8rem;
+            transform: translateY(-100%);
+            transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+            z-index: 1001;
+            padding: 2rem 5%;
+        }
+
+        .nav-mobile.active {
+            transform: translateY(0);
+        }
+
+        .nav-mobile a.mobile-link {
+            font-family: var(--font-title);
+            font-size: 2rem;
+            color: var(--c-black);
+            transition: var(--transition);
+        }
+
+        .nav-mobile a.mobile-link:hover {
+            color: var(--c-pink);
+        }
+
+        .nav-mobile .mobile-cta {
+            margin-top: 1rem;
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 9rem 5% 5rem;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background-color: var(--c-offwhite);
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--c-gray);
+            border: 1px solid var(--c-border);
+            padding: 6px 14px;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+            background-color: var(--c-white);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 4.2vw, 4rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+            color: var(--c-gray);
+            max-width: 90%;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2.2rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            width: 100%;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            aspect-ratio: 4/5;
+            max-height: 560px;
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            object-position: 50% 34%;
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            background-color: var(--c-pink-soft);
+            padding: 1.5rem 5%;
+            border-top: 1px solid rgba(244, 92, 174, 0.15);
+            border-bottom: 1px solid rgba(244, 92, 174, 0.15);
+        }
+
+        .trust-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        .trust-item {
+            font-family: var(--font-title);
+            font-size: 1.25rem;
+            color: var(--c-black);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        /* Serviços */
+        .services {
+            padding: var(--section-padding);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--c-white);
+            border: 1px solid var(--c-border);
+            padding: 2.5rem 2rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            border-color: var(--c-pink);
+            box-shadow: 0 12px 30px rgba(244, 92, 174, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .service-card .btn-text {
+            align-self: flex-start;
+            margin-top: auto;
+        }
+
+        /* Bloco Editorial */
+        .editorial {
+            padding: var(--section-padding);
+            background-color: var(--c-offwhite);
+        }
+
+        .editorial-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .editorial-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+        }
+
+        .editorial-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            object-position: center;
+        }
+
+        .about .editorial-image img {
+            object-position: 50% 32%;
+        }
+
+        .editorial-content h2 {
+            font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+            margin-bottom: 1.8rem;
+        }
+
+        .editorial-content p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+        }
+
+        /* Diferenciais */
+        .differentiators {
+            padding: var(--section-padding);
+        }
+
+        .diff-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2.5rem;
+            margin-top: 3.5rem;
+        }
+
+        .diff-item {
+            border-top: 2px solid var(--c-black);
+            padding-top: 1.8rem;
+        }
+
+        .diff-number {
+            font-family: var(--font-title);
+            font-size: 3rem;
+            color: var(--c-pink);
+            line-height: 1;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .diff-item h3 {
+            font-size: 1.35rem;
+            margin-bottom: 0.8rem;
+        }
+
+        /* Resultados */
+        .results {
+            padding: var(--section-padding);
+            background-color: var(--c-offwhite);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 4/5;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            background-color: var(--c-white);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            display: block;
+            object-position: center;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.06);
+        }
+
+        /* Terapia Capilar */
+        .therapy {
+            padding: var(--section-padding);
+        }
+
+        .therapy-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .therapy-list {
+            margin: 2rem 0;
+            padding-left: 0;
+        }
+        
+        .therapy-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--c-gray);
+            font-family: var(--font-text);
+        }
+        
+        .therapy-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 6px;
+            height: 6px;
+            background-color: var(--c-pink);
+            border-radius: 50%;
+        }
+
+        /* Sobre o Studio */
+        .about {
+            padding: var(--section-padding);
+            background-color: var(--c-offwhite);
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-number {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            padding: 1.5rem 0;
+            border-top: 1px solid var(--c-border);
+            border-bottom: 1px solid var(--c-border);
+        }
+        
+        .about-number .num {
+            font-family: var(--font-title);
+            font-size: 4.5rem;
+            color: var(--c-pink);
+            line-height: 1;
+            font-weight: 600;
+        }
+        
+        .about-number .text {
+            font-family: var(--font-title);
+            font-size: 1.4rem;
+            color: var(--c-black);
+            font-style: italic;
+            line-height: 1.2;
+        }
+
+        /* Ambiente */
+        .environment {
+            padding: var(--section-padding);
+        }
+
+        .env-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 280px;
+            gap: 1.2rem;
+            margin-top: 3rem;
+        }
+
+        .env-item {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            background-color: var(--c-pink-soft);
+        }
+
+        .env-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+        .env-item:nth-child(2) { grid-column: span 1; grid-row: span 1; }
+        .env-item:nth-child(3) { grid-column: span 1; grid-row: span 1; }
+
+        .env-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+            object-position: center;
+        }
+
+        .env-item:first-child img { object-position: 50% 48%; }
+
+        .env-item:hover img {
+            transform: scale(1.04);
+        }
+
+        /* CTA WhatsApp */
+        .cta-whatsapp-section {
+            padding: 5.5rem 5%;
+            background-color: var(--c-pink);
+            text-align: center;
+            color: var(--c-white);
+        }
+
+        .cta-whatsapp-section .eyebrow {
+            color: var(--c-white);
+            opacity: 0.9;
+        }
+
+        .cta-whatsapp-section h2 {
+            color: var(--c-white);
+            margin-bottom: 1.2rem;
+        }
+
+        .cta-whatsapp-section p {
+            color: var(--c-white);
+            opacity: 0.95;
+            margin-bottom: 2.2rem;
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.1rem;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: var(--section-padding);
+            background-color: var(--c-offwhite);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 3rem auto 0;
+            text-align: left;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--c-border);
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 1.2rem 0;
+            font-family: var(--font-text);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--c-black);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--c-pink);
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '−';
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer p {
+            padding-bottom: 1.5rem;
+            color: var(--c-gray);
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        /* Localização */
+        .location {
+            padding: var(--section-padding);
+        }
+
+        .location-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .location-card {
+            background: var(--c-offwhite);
+            border: 1px solid var(--c-border);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+        }
+
+        .location-badge {
+            display: inline-block;
+            align-self: flex-start;
+            background-color: var(--c-pink-soft);
+            color: var(--c-pink);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 50px;
+            letter-spacing: 0.05em;
+        }
+
+        .info-list {
+            margin: 1.5rem 0;
+        }
+
+        .info-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: var(--c-black);
+            margin-bottom: 0.2rem;
+            display: block;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+        }
+
+        .info-item p {
+            color: var(--c-gray);
+        }
+
+        .info-item a {
+            color: var(--c-black);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .info-item a:hover {
+            color: var(--c-pink);
+        }
+        
+        .location-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .hours-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            color: var(--c-gray);
+        }
+
+        .hours-table td {
+            padding: 4px 0;
+        }
+
+        .hours-table td:last-child {
+            text-align: right;
+            font-weight: 600;
+            color: var(--c-black);
+        }
+
+        /* CTA Final */
+        .cta-final {
+            padding: 7rem 5%;
+            background: linear-gradient(rgba(23, 23, 23, 0.70), rgba(23, 23, 23, 0.70)), url('assets/images/cta-background.webp') center/cover no-repeat;
+            text-align: center;
+            color: var(--c-white);
+        }
+
+        .cta-final h2 {
+            color: var(--c-white);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-final p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--c-black);
+            color: var(--c-white);
+            padding: 4.5rem 5% 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .footer-logo {
+            font-family: var(--font-title);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--c-white);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo span {
+            color: var(--c-pink);
+        }
+
+        .footer-col h4 {
+            color: var(--c-white);
+            font-family: var(--font-text);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.3rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.7rem;
+        }
+
+        .footer-col a, .footer-col p {
+            color: #A0A0A0;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-col a:hover {
+            color: var(--c-pink);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.8rem;
+            color: #A0A0A0;
+        }
+
+        /* Botão Flutuante WhatsApp */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 18px rgba(37, 211, 102, 0.45);
+            z-index: 999;
+            transition: var(--transition);
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+            background-color: #1EBE5D;
+        }
+
+        .floating-whatsapp svg {
+            width: 32px;
+            height: 32px;
+            fill: currentColor;
+        }
+
+        .floating-whatsapp span {
+            display: none;
+        }
+
+        /* Responsividade para Tablet e Mobile */
+        @media (max-width: 992px) {
+            .nav-links, .header-cta {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero-container, .editorial-container, .therapy-container, .about-container, .location-container {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            
+            .hero {
+                padding-top: 7.5rem;
+            }
+
+            .hero-image {
+                max-height: 400px;
+                order: -1;
+            }
+
+            .hero-image img, .about .editorial-image img {
+                object-position: 50% 28%;
+            }
+
+            .services-grid, .diff-grid, .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .env-grid { 
+                grid-template-columns: repeat(2, 1fr); 
+                grid-auto-rows: 220px; 
+            }
+            .env-item:nth-child(1) { grid-column: span 2; grid-row: span 1; }
+        }
+
+        @media (max-width: 640px) {
+            :root {
+                --section-padding: 3.5rem 5%;
+            }
+
+            .services-grid, .diff-grid, .gallery-grid, .env-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .env-item:nth-child(1) { grid-column: span 1; grid-row: span 1; }
+            
+            .trust-container {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-actions, .location-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .hero-actions .btn, .location-actions .btn {
+                width: 100%;
+            }
+
+            .floating-whatsapp {
+                bottom: 20px;
+                right: 20px;
+                width: 54px;
+                height: 54px;
+            }
+
+            .floating-whatsapp svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <div class="nav-container">
+            <a href="#inicio" class="logo">
+                Studio <span>YVI</span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#inicio">Início</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#resultados">Resultados</a>
+                <a href="#contato">Contato</a>
+            </nav>
+
+            <div class="header-cta">
+                <a href="#" class="btn btn-primary btn-whatsapp">Agendar WhatsApp</a>
+            </div>
+
+            <button class="hamburger" aria-label="Abrir menu de navegação">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div class="nav-mobile">
+            <a href="#inicio" class="mobile-link">Início</a>
+            <a href="#servicos" class="mobile-link">Serviços</a>
+            <a href="#sobre" class="mobile-link">Sobre</a>
+            <a href="#resultados" class="mobile-link">Resultados</a>
+            <a href="#contato" class="mobile-link">Contato</a>
+            <div class="mobile-cta">
+                <a href="#" class="btn btn-primary btn-whatsapp" style="width: 100%;">Agendar pelo WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-badge">Studio YVI • 17 anos de experiência</span>
+                <h1>Beleza que transforma.<br>Cuidado que acolhe.</h1>
+                <p>Há 17 anos cuidando de mulheres que valorizam beleza, bem-estar e um atendimento feito com atenção aos detalhes.</p>
+                <p>Do cabelo às unhas, da sobrancelha aos cuidados com a pele e o couro cabeludo, aqui você encontra diferentes serviços em um só lugar.</p>
+                <div class="hero-actions">
+                    <a href="#" class="btn btn-primary btn-whatsapp">Agendar pelo WhatsApp</a>
+                    <a href="#servicos" class="btn btn-secondary">Conhecer os Serviços</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/images/yvi-proprietaria.webp" alt="Yvi, proprietária do Studio YVI, com tesoura e pente" width="731" height="717" loading="eager">
+            </div>
+        </div>
+    </section>
+
+    <div class="trust-bar">
+        <div class="trust-container">
+            <div class="trust-item">✦ 17 anos de experiência</div>
+            <div class="trust-item">✦ Atendimento personalizado</div>
+            <div class="trust-item">✦ Diversos cuidados em um só lugar</div>
+            <div class="trust-item">✦ Agendamento fácil via WhatsApp</div>
+        </div>
+    </div>
+
+    <!-- Serviços -->
+    <section id="servicos" class="services">
+        <div class="container text-center">
+            <span class="eyebrow">Nossos Cuidados</span>
+            <h2 class="section-title">Tudo o que você precisa<br>para cuidar de você.</h2>
+            <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">Encontre diferentes serviços de beleza e cuidados pessoais em um único espaço.</p>
+            
+            <div class="services-grid text-left">
+                <div class="service-card">
+                    <h3>Cabelos</h3>
+                    <p><strong>Cuidado para valorizar seus fios.</strong><br>Serviços pensados para manutenção, transformação e cuidado dos cabelos, respeitando suas características e o resultado que você deseja alcançar.</p>
+                    <a href="#" class="btn-text btn-whatsapp">Consultar serviços para cabelos &rarr;</a>
+                </div>
+                <div class="service-card">
+                    <h3>Unhas</h3>
+                    <p><strong>Detalhes que completam o seu cuidado.</strong><br>Cuidados para mãos e unhas com atenção ao acabamento, conforto e ao seu estilo.</p>
+                    <a href="#" class="btn-text btn-whatsapp">Agendar minhas unhas &rarr;</a>
+                </div>
+                <div class="service-card">
+                    <h3>Sobrancelhas</h3>
+                    <p><strong>Harmonia para valorizar seu olhar.</strong><br>Cuidados voltados para o desenho e a manutenção das sobrancelhas, respeitando os traços naturais do seu rosto.</p>
+                    <a href="#" class="btn-text btn-whatsapp">Quero cuidar das sobrancelhas &rarr;</a>
+                </div>
+                <div class="service-card">
+                    <h3>Depilação</h3>
+                    <p><strong>Praticidade e cuidado na sua rotina.</strong><br>Atendimento pensado para proporcionar conforto e praticidade em diferentes áreas do corpo.</p>
+                    <a href="#" class="btn-text btn-whatsapp">Consultar opções de depilação &rarr;</a>
+                </div>
+                <div class="service-card">
+                    <h3>Micropigmentação</h3>
+                    <p><strong>Detalhes pensados para valorizar sua beleza.</strong><br>Atendimentos realizados de forma personalizada, considerando suas características e o resultado que você busca.</p>
+                    <a href="#" class="btn-text btn-whatsapp">Quero saber mais &rarr;</a>
+                </div>
+                <div class="service-card">
+                    <h3>Terapia Capilar</h3>
+                    <p><strong>Um olhar mais cuidadoso para seus cabelos.</strong><br>Cuidados voltados às necessidades dos fios e do couro cabeludo, com atenção dedicada ao seu bem-estar.</p>
+                    <a href="#terapia" class="btn-text">Falar sobre terapia capilar &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="editorial">
+        <div class="container editorial-container">
+            <div class="editorial-image">
+                <img src="assets/images/editorial-beleza.webp" alt="Profissional finalizando o penteado de uma cliente em atendimento" width="1024" height="1280" loading="lazy">
+            </div>
+            <div class="editorial-content">
+                <h2>17 anos cuidando da beleza de cada mulher de um jeito único.</h2>
+                <p>No Studio YVI, acreditamos que cuidar da beleza também é reservar um momento de paz e renovação para você.</p>
+                <p>Ao longo de 17 anos de experiência, construímos um espaço pensado para receber cada cliente com atenção, profissionalismo e acolhimento.</p>
+                <p>Nosso objetivo é entender o que você procura, respeitar suas preferências e oferecer cuidados que façam sentido para sua rotina e para seu estilo.</p>
+                <br>
+                <a href="#sobre" class="btn btn-secondary">Conhecer Nossa História</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section class="differentiators">
+        <div class="container">
+            <h2 class="section-title text-center">Cuidado que você percebe<br>em cada detalhe.</h2>
+            
+            <div class="diff-grid">
+                <div class="diff-item">
+                    <div class="diff-number">01</div>
+                    <h3>17 anos de experiência</h3>
+                    <p>Uma trajetória construída através do contato diário com diferentes mulheres, estilos e necessidades.</p>
+                </div>
+                <div class="diff-item">
+                    <div class="diff-number">02</div>
+                    <h3>Atendimento acolhedor</h3>
+                    <p>Aqui, cada cliente é recebida com atenção dedicada e tempo para explicar exatamente o que deseja.</p>
+                </div>
+                <div class="diff-item">
+                    <div class="diff-number">03</div>
+                    <h3>Cuidados personalizados</h3>
+                    <p>Cada serviço é conduzido considerando suas preferências, estilo de vida e características únicas.</p>
+                </div>
+                <div class="diff-item">
+                    <div class="diff-number">04</div>
+                    <h3>Serviços completos</h3>
+                    <p>Cabelos, unhas, sobrancelhas, depilação, micro e terapia capilar reunidos em um ambiente integrado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resultados" class="results">
+        <div class="container text-center">
+            <span class="eyebrow">Apresentação Visual</span>
+            <h2 class="section-title">Uma presença visual<br>à altura do seu trabalho.</h2>
+            <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">Cada atendimento busca valorizar as características de cada cliente com cuidado, dedicação e atenção aos detalhes.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="assets/images/galeria-cabelo.webp" alt="Detalhe de cuidado profissional com os fios" width="1024" height="1280" loading="lazy"></div>
+                <div class="gallery-item"><img src="assets/images/galeria-beleza.webp" alt="Preparação cuidadosa da estação de atendimento" width="1024" height="1280" loading="lazy"></div>
+                <div class="gallery-item"><img src="assets/images/galeria-unhas.webp" alt="Manicure em atendimento com acabamento delicado" width="1024" height="1280" loading="lazy"></div>
+                <div class="gallery-item"><img src="assets/images/galeria-sobrancelhas.webp" alt="Cuidado de sobrancelhas durante o atendimento" width="1024" height="1280" loading="lazy"></div>
+            </div>
+            
+            <a href="#" class="btn btn-secondary btn-whatsapp">Quero saber qual cuidado combina comigo</a>
+            <p class="demo-notice">* Registros provisórios. Substituir por fotos reais dos atendimentos do Studio YVI.</p>
+        </div>
+    </section>
+
+    <!-- Terapia Capilar -->
+    <section id="terapia" class="therapy">
+        <div class="container therapy-container">
+            <div class="editorial-image">
+                <img src="assets/images/terapia-capilar.webp" alt="Avaliação cuidadosa dos fios e do couro cabeludo" width="1024" height="1280" loading="lazy">
+            </div>
+            <div class="therapy-content">
+                <span class="eyebrow">Terapia Capilar</span>
+                <h2>Um olhar mais cuidadoso para seus fios e couro cabeludo.</h2>
+                <p>Cada cabelo possui características e necessidades diferentes.</p>
+                <p>No Studio YVI, a terapia capilar traz um acompanhamento focado na saúde e no bem-estar dos seus fios, oferecendo atendimento dedicado e individualizado.</p>
+                
+                <ul class="therapy-list">
+                    <li>Atendimento dedicado e personalizado</li>
+                    <li>Cuidados voltados às necessidades do couro cabeludo e fios</li>
+                    <li>Foco no bem-estar e na renovação capilar</li>
+                    <li>Orientação atenciosa durante e após o atendimento</li>
+                </ul>
+                
+                <a href="#" class="btn btn-primary btn-whatsapp">Quero saber mais pelo WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="about">
+        <div class="container about-container">
+            <div class="about-content">
+                <span class="eyebrow">Studio YVI</span>
+                <h2>Técnica, experiência e acolhimento há 17 anos.</h2>
+                <p>Mais do que realizar serviços de beleza, acreditamos que cada atendimento deve proporcionar segurança, conforto e renovação de autoimagem.</p>
+                <p>Nosso trabalho é baseado na escuta atenta das necessidades de cada cliente, no cuidado individualizado e na atenção dedicada a todos os detalhes.</p>
+                
+                <div class="about-number">
+                    <span class="num">17</span>
+                    <span class="text">anos de história e<br>dedicação às clientes</span>
+                </div>
+                
+                <a href="#" class="btn btn-secondary btn-whatsapp">Falar com o Studio YVI</a>
+            </div>
+            <div class="editorial-image">
+                <img src="assets/images/yvi-proprietaria.webp" alt="Yvi, proprietária do Studio YVI" width="731" height="717" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Ambiente -->
+    <section class="environment">
+        <div class="container">
+            <h2 class="section-title text-center">Um conceito de espaço feito para o seu momento.</h2>
+            <p class="section-subtitle text-center" style="margin-left: auto; margin-right: auto;">Uma atmosfera acolhedora e tranquila para proporcionar conforto e um momento agradável durante o atendimento.</p>
+            
+            <div class="env-grid">
+                <div class="env-item"><img src="assets/images/ambiente-principal.webp" alt="Referência provisória de ambiente de studio de beleza" width="1280" height="1024" loading="lazy"></div>
+                <div class="env-item"><img src="assets/images/ambiente-detalhe.webp" alt="Referência provisória de bancada de atendimento" width="1024" height="1024" loading="lazy"></div>
+                <div class="env-item"><img src="assets/images/ambiente-atendimento.webp" alt="Referência provisória de área de atendimento" width="1024" height="1024" loading="lazy"></div>
+            </div>
+            <p class="demo-notice text-center">* Registros provisórios. Substituir por fotos reais do espaço do Studio YVI.</p>
+        </div>
+    </section>
+
+    <section class="cta-whatsapp-section">
+        <div class="container">
+            <span class="eyebrow">Estamos aqui para te ajudar</span>
+            <h2>Não sabe qual serviço escolher?</h2>
+            <p>Conte o que você está procurando e fale diretamente com nossa equipe. Vamos apresentar as opções disponíveis e ajudar você a encontrar o melhor horário.</p>
+            <a href="#" class="btn btn-white btn-whatsapp">Falar no WhatsApp Agora</a>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container text-center">
+            <span class="eyebrow">Dúvidas Frequentes</span>
+            <h2 class="section-title">Respostas para suas dúvidas.</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" type="button">Como faço para agendar um horário?</button>
+                    <div class="faq-answer">
+                        <p>O agendamento pode ser feito de forma rápida e prática pelo nosso WhatsApp. Nossa equipe apresentará a você os horários e datas disponíveis.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" type="button">Quais serviços o Studio YVI oferece?</button>
+                    <div class="faq-answer">
+                        <p>Oferecemos um portfólio completo: cuidados para cabelos, manicure e pedicure, design de sobrancelhas, depilação, micropigmentação e terapia capilar.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" type="button">Onde fica localizado o Studio YVI?</button>
+                    <div class="faq-answer">
+                        <p>Estamos localizados na Avenida Central, 20 - Porto Velho, Ilha Comprida - SP (CEP 11925-000).</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" type="button">É necessário agendar com antecedência?</button>
+                    <div class="faq-answer">
+                        <p>Recomendamos o agendamento prévio via WhatsApp para garantir o dia e horário de sua preferência.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Localização e Contato -->
+    <section id="contato" class="location">
+        <div class="container location-container">
+            <div class="location-card">
+                <span class="location-badge">Informações de Contato</span>
+                <h3 class="location-card-title">Studio YVI</h3>
+                
+                <div class="info-item">
+                    <span class="info-label">Endereço Real</span>
+                    <p>Avenida Central, 20<br>Porto Velho — Ilha Comprida / SP<br>CEP 11925-000, Brasil</p>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">Telefone / WhatsApp</span>
+                    <p><a href="tel:+5511934995323">(11) 93499-5323</a></p>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">E-mail</span>
+                    <p><a href="mailto:evislaniaguedes@gmail.com">evislaniaguedes@gmail.com</a></p>
+                </div>
+            </div>
+
+            <div class="location-content">
+                <span class="eyebrow">Localização & Horários</span>
+                <h2>Venha cuidar de você com a gente.</h2>
+                
+                <div class="info-list">
+                    <div class="info-item">
+                        <span class="info-label">Horários de Atendimento</span>
+                        <table class="hours-table" style="margin-top: 0.5rem;">
+                            <tr>
+                                <td>Segunda-feira:</td>
+                                <td>Fechado</td>
+                            </tr>
+                            <tr>
+                                <td>Terça a Sexta-feira:</td>
+                                <td>10h00 às 17h30</td>
+                            </tr>
+                            <tr>
+                                <td>Sábado:</td>
+                                <td>09h00 às 17h30</td>
+                            </tr>
+                            <tr>
+                                <td>Domingo:</td>
+                                <td>Fechado</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="location-actions">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Avenida+Central%2C+20+-+Porto+Velho%2C+Ilha+Comprida+-+SP%2C+11925-000" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Abrir no GPS (Google Maps)</a>
+                    <a href="#" class="btn btn-primary btn-whatsapp">Agendar pelo WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-final">
+        <div class="container">
+            <h2>Seu próximo momento de cuidado<br>começa aqui.</h2>
+            <p>Fale com nossa equipe, tire suas dúvidas e consulte os próximos horários disponíveis.</p>
+            <a href="#" class="btn btn-primary btn-whatsapp">Agendar Meu Horário</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">Studio <span>YVI</span></div>
+                    <p style="margin-top: 1rem; max-width: 300px;">Beleza que transforma. Cuidado que acolhe. Há 17 anos valorizando a essência de cada mulher.</p>
+                    <p class="demo-notice" style="margin-top: 1rem;">* Registros provisórios. Substituir por fotos reais dos atendimentos do Studio YVI.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#resultados">Resultados</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Atendimento</h4>
+                    <ul>
+                        <li><a href="#" class="btn-whatsapp">WhatsApp: (11) 93499-5323</a></li>
+                        <li><a href="mailto:evislaniaguedes@gmail.com">E-mail de Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Localização</h4>
+                    <p>Avenida Central, 20<br>Porto Velho<br>Ilha Comprida - SP<br>CEP 11925-000</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Studio YVI &copy; Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante WhatsApp -->
+    <a href="#" class="floating-whatsapp btn-whatsapp" aria-label="Falar no WhatsApp">
+        <svg viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        const WHATSAPP_NUMBER = "5511934995323";
+        const WHATSAPP_MSG = "Olá! Conheci o Studio YVI pelo site e gostaria de saber mais sobre os serviços e horários.";
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MSG)}`;
+            const wpBtns = document.querySelectorAll('.btn-whatsapp');
+            
+            wpBtns.forEach(btn => {
+                btn.href = whatsappUrl;
+                btn.target = "_blank";
+                btn.rel = "noopener noreferrer";
+            });
+
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 40) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            const hamburger = document.querySelector('.hamburger');
+            const navMobile = document.querySelector('.nav-mobile');
+            const mobileLinks = document.querySelectorAll('.mobile-link, .nav-mobile .btn-whatsapp');
+
+            function toggleMenu() {
+                hamburger.classList.toggle('active');
+                navMobile.classList.toggle('active');
+                document.body.style.overflow = navMobile.classList.contains('active') ? 'hidden' : '';
+            }
+
+            hamburger.addEventListener('click', toggleMenu);
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navMobile.classList.contains('active')) {
+                        toggleMenu();
+                    }
+                });
+            });
+
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    faqItems.forEach(otherItem => otherItem.classList.remove('active'));
+                    if (!isActive) item.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
