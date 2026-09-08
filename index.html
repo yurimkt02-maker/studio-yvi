@@ -1396,6 +1396,246 @@
                 aspect-ratio: 4/3;
             }
         }
+    
+        /* ==================================================
+           HOTFIX MOBILE FINAL — STUDIO YVI
+           Corrige overflow, botões longos e composição estreita
+           ================================================== */
+        @media (max-width: 767px) {
+            html, body {
+                width: 100%;
+                max-width: 100%;
+                overflow-x: clip;
+            }
+
+            body {
+                min-width: 0;
+            }
+
+            .container,
+            .hero-container,
+            .editorial-container,
+            .therapy-container,
+            .about-container,
+            .location-container,
+            .hero-content,
+            .editorial-content,
+            .therapy-content,
+            .about-content,
+            .location-content,
+            .location-card,
+            .service-card,
+            .diff-item,
+            .gallery-item,
+            .env-item {
+                min-width: 0;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .hero,
+            .services,
+            .editorial,
+            .differentiators,
+            .results,
+            .therapy,
+            .about,
+            .environment,
+            .faq,
+            .location {
+                overflow: hidden;
+            }
+
+            .nav-mobile {
+                min-height: 100dvh;
+                height: 100dvh;
+            }
+
+            .hero {
+                padding-top: 88px;
+            }
+
+            .hero-badge {
+                max-width: 100%;
+                white-space: normal;
+                line-height: 1.35;
+            }
+
+            .hero h1,
+            .section-title,
+            .editorial-content h2,
+            .therapy-content h2,
+            .about-content h2,
+            .location-content h2,
+            .cta-final h2,
+            .cta-whatsapp-section h2 {
+                overflow-wrap: anywhere;
+                word-break: normal;
+            }
+
+            .hero h1 br,
+            .section-title br {
+                display: none;
+            }
+
+            .hero-actions,
+            .location-actions {
+                align-items: stretch;
+            }
+
+            .btn,
+            .hero-actions .btn,
+            .location-actions .btn,
+            .cta-whatsapp-section .btn,
+            .cta-final .btn {
+                width: 100%;
+                max-width: 100%;
+                white-space: normal;
+                text-align: center;
+                line-height: 1.25;
+                padding: 14px 16px;
+                overflow-wrap: anywhere;
+            }
+
+            .btn-text,
+            .service-card .btn-text {
+                display: inline;
+                max-width: 100%;
+                white-space: normal;
+                overflow-wrap: anywhere;
+                line-height: 1.45;
+            }
+
+            .trust-container {
+                width: 100%;
+            }
+
+            .trust-item {
+                min-width: 0;
+                line-height: 1.35;
+                overflow-wrap: anywhere;
+            }
+
+            .about-number {
+                gap: 1rem;
+                align-items: flex-start;
+                flex-wrap: wrap;
+            }
+
+            .about-number .num {
+                font-size: 3.4rem;
+                flex: 0 0 auto;
+            }
+
+            .about-number .text {
+                font-size: 1.15rem;
+                flex: 1 1 160px;
+            }
+
+            .hours-table {
+                table-layout: fixed;
+                width: 100%;
+            }
+
+            .hours-table td {
+                width: 50%;
+                vertical-align: top;
+                overflow-wrap: anywhere;
+            }
+
+            .hours-table td:last-child {
+                text-align: left;
+                padding-left: 10px;
+            }
+
+            .info-item p,
+            .info-item a,
+            .footer-col p,
+            .footer-col a {
+                overflow-wrap: anywhere;
+                word-break: break-word;
+            }
+
+            .faq-question {
+                min-width: 0;
+                align-items: flex-start;
+            }
+
+            .faq-question::after {
+                flex: 0 0 auto;
+            }
+
+            .floating-whatsapp {
+                max-width: calc(100vw - 24px);
+            }
+
+            .floating-whatsapp span {
+                min-width: 0;
+                max-width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        @media (max-width: 390px) {
+            :root {
+                --section-padding: 3.5rem 16px;
+            }
+
+            .nav-container,
+            .hero,
+            .trust-bar,
+            .cta-whatsapp-section {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+                letter-spacing: 0.05em;
+            }
+
+            .hero h1 {
+                font-size: clamp(2rem, 10.5vw, 2.35rem);
+            }
+
+            .hero-image,
+            .editorial-image {
+                aspect-ratio: 4 / 5;
+                max-height: none;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery-item {
+                aspect-ratio: 4 / 5;
+            }
+
+            .floating-whatsapp span {
+                font-size: 0.86rem;
+            }
+        }
+
+        @media (max-width: 340px) {
+            .gallery-grid,
+            .env-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .env-item:nth-child(1),
+            .env-item:nth-child(2),
+            .env-item:nth-child(3) {
+                grid-column: 1 / -1;
+                aspect-ratio: 4 / 3;
+            }
+
+            .floating-whatsapp span {
+                font-size: 0.8rem;
+            }
+        }
+
     </style>
 </head>
 <body>
